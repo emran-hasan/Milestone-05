@@ -1,54 +1,35 @@
+function updatePhonePrice(isDecrease){
 
-function updatePhonePrice(inputValue){
     const phoneNumberField = document.getElementById('phone-number-field');
     const phoneNumberString = phoneNumberField.value;
     const phoneNumber = parseInt(phoneNumberString);
 
     let newPhonePrice;
-    if(inputValue === true){
-         newPhonePrice = phoneNumber + 1;
+    if(isDecrease){
+        newPhonePrice = phoneNumber + 1;
     }else{
-         newPhonePrice = phoneNumber - 1;
+        newPhonePrice = phoneNumber - 1;
     }
-    phoneNumberField.value = newPhonePrice
+    phoneNumberField.value =newPhonePrice;
     return newPhonePrice;
-
 }
-function newUpdatePhonePrice(newPhonePrice){
+
+function updateTotalPrice(newPhonePrice){
+
     const phoneTotalPrice = newPhonePrice * 2031;
-    const totalPhone = document.getElementById('phone-total');
-    totalPhone.innerText = phoneTotalPrice;
+    const phoneTotalElement = document.getElementById('phone-total');
+    phoneTotalElement.innerText = phoneTotalPrice;
 }
 
-document.getElementById('btn-phone-plus').addEventListener('click', function(){
-    
-    const newPhonePrice = updatePhonePrice(true);
-    newUpdatePhonePrice(newPhonePrice);
-
+document.getElementById('btn-phone-plus').addEventListener('click', function (){
+    const newPhonePrice =  updatePhonePrice(true);
+    updateTotalPrice(newPhonePrice);
+    calculateSubTotal();  
 })
+
 document.getElementById('btn-phone-minus').addEventListener('click', function(){
-    
-    const newPhonePrice = updatePhonePrice(false);
-    newUpdatePhonePrice(newPhonePrice);
-
+  const newPhonePrice = updatePhonePrice(false);
+  updateTotalPrice(newPhonePrice);
+  calculateSubTotal();
+  
 })
-
-
-
-// document.getElementById('btn-phone-plus').addEventListener('click', function(){
-//     const phoneNumberField = document.getElementById('phone-number-field');
-//     const phoneNumberString = phoneNumberField.value;
-//     const phoneNumber = parseInt(phoneNumberString);
-
-//     const newPhonePrice = phoneNumber + 1;
-//     phoneNumberField.value = newPhonePrice;
-// })
-// document.getElementById('btn-phone-minus').addEventListener('click', function(){
-//     const phoneNumberField = document.getElementById('phone-number-field');
-//     const phoneNumberString = phoneNumberField.value;
-//     const phoneNumber = parseInt(phoneNumberString);
-
-//     const newPhonePrice = phoneNumber - 1;
-//     phoneNumberField.value = newPhonePrice;
-// })
-
