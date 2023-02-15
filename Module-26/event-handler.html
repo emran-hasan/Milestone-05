@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="changed-onclick">This is event handler of DOM Project</h1>
+    <button onclick="handleOnClick()">Handle event by Onclick function</button>
+    <button id="add-event">Event addEventListener</button>
+    <br>
+    <br>
+
+    <p id="input-text-display">Input Field text</p>
+    <input id="input-field" type="text">
+    <button id="btn-submit">Submit</button>
+
+    <script>
+
+        document.getElementById('btn-submit').addEventListener('click', function(){
+            const inputField = document.getElementById('input-field');
+            const inputText = inputField.value;
+
+            const p = document.getElementById('input-text-display');
+            p.innerText = inputText;
+            inputField.value ='';
+        })
+
+
+        document.getElementById('add-event').addEventListener('click', function(){
+            const changedOnclicks = document.getElementById('changed-onclick');
+            changedOnclicks.innerText = 'This is final DOM project element now it can be run';
+        })
+
+        function handleOnClick(){
+            const changedOnclick = document.getElementById('changed-onclick');
+            changedOnclick.innerText = 'Event handler final DOM';
+        }
+    </script>
+</body>
+</html>
