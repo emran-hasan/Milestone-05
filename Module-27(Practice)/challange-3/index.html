@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/97261120aa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Text Editor টাইপের একটা লে-আউট বানাবে। সেখানে একটা Textarea থাকবে। সাথে বেশ কিছু বাটন থাকবে। এদের মধ্যে কোনো একটি বাটনে ক্লিক করলে textarea এর ভিতরের লিখা গুলোর স্টাইল বোল্ড হয়ে যাবে। ঠিক একইভাবে অন্যবাটন গুলো ব্যাবহার করে দেখো ইটালিক, আন্ডারলাইন, লেফট অ্যালাইন, রাইট অ্যালাইন, সেন্টার অ্যালাইন করতে পারো কিনা। এছাড়া একটা নম্বর টাইপের ইনপুট ফিল্ডে ফন্ট সাইজ ইনপুট নিবে। এরপর সে ভ্যালু ব্যাবহার করে টেক্সটের সাইজ পরিবর্তন করবে। আরেকটা নতুন জিনিস ট্রাই করতে পারো। টেক্সট গুলোর কালার পরিবর্তন করার চেষ্টা করে দেখতে পারো। এরজন্য ইনপুট এর type=”color” সম্পর্কে একটু জানতে হবে।   -->
+    <section class=" p-5">
+        <div class="text-center mt-12 w-9/12 mx-auto bg-indigo-200 p-6 rounded-xl">
+            <div class="font-bold text-cyan-500 text-4xl">My Text Editor</div>
+            <div class="   mt-8 w-9/12 bg-cyan-200 mx-auto ring-2 ring-green-800 p-4 h-full">
+                <div class=" flex justify-around gap-10 place-content-center  bg-cyan-200 mx-auto  p-4 h-full">
+                    <div class="space-x-4">
+                        <button id="bold" class="hover:bg-teal-100 px-2 rounded ">B</button>
+                        <button id="italic" class="hover:bg-teal-100 px-2 rounded italic">I</button>
+                        <button id="underline" class="hover:bg-teal-100 px-2 rounded underline">U</button>
+                    </div>
+                    <div class="space-x-4">
+                        <button class="hover:bg-teal-100 px-2 rounded "><i class="fa-solid fa-align-left"></i></button>
+                        <button class="hover:bg-teal-100 px-2 rounded "><i class="fa-solid fa-align-justify"></i></i></button>
+                        <button class="hover:bg-teal-100 px-2 rounded "><i class="fa-solid fa-align-center"></i></i></button>
+                        <button class="hover:bg-teal-100 px-2 rounded "><i class="fa-solid fa-align-left"></i></button>
+                    </div>
+                    <div class="space-x-4">
+                        <button ><input id="font_size"type="number"value="12"class="w-14 outline-nonerounded-md p-1"/></button>
+                        <button class="font-semibold hover:bg-teal-100 px-2 rounded " id="latter_case">aA</button>
+                        <button><input type="color" id="font_color" /></button>
+                      </div>
+                </div>
+                  <div class="block">
+                    <textarea class="w-full h-full outline-none" name="" id="text-area" id="input_value" cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
