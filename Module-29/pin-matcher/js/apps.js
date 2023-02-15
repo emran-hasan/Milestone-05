@@ -1,4 +1,4 @@
-
+// Step-2 
 function getPin(){
     const pin = GeneratePin();
     const pinString = pin + '';
@@ -13,8 +13,12 @@ function GeneratePin(){
     const random = Math.round(Math.random()*10000);
     return random;
 }
-
+// step-3 
 document.getElementById('generate-pin').addEventListener('click', function(){
     const pinNew =getPin();
-    console.log(pinNew);
+
+    const displayPinField =  document.getElementById('display-pin');
+    displayPinField.value = pinNew;
+    
+
 })
